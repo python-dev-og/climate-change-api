@@ -1,4 +1,4 @@
-const PORT = 8000
+const PORT = process.env.PORT || 8000
 const express = require('express')
 const axios = require('axios')
 const cheerio = require('cheerio')
@@ -40,11 +40,12 @@ const newspapers = [
         address: 'https://www.smh.com.au/environment/climate-change',
         base: 'https://www.smh.com.au',
     },
-    {
-        name: 'un',
-        address: 'https://www.un.org/climatechange',
-        base: '',
-    },
+    // this link is crashing the api
+    // {
+    //     name: 'un',
+    //     address: 'https://www.un.org/climatechange',
+    //     base: '',
+    // },
     {
         name: 'bbc',
         address: 'https://www.bbc.co.uk/news/science_and_environment',
@@ -126,7 +127,7 @@ app.get('/news', (req,res) => {
     res.json(articles)
 })
 
-app.get('/news/:newspaperId', async (req, res) => {
+app.get('/news/:newspaperId', (req, res) => {
     const newspaperId = req.params.newspaperId
 
     const newspaperAddress = newspapers.filter(newspaper => newspaper.name == newspaperId)[0].address
