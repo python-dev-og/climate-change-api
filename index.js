@@ -71,31 +71,31 @@ const newspapers = [
         address: 'https://nypost.com/tag/climate-change',
         base: ''
     },
-    // {
-    //     name: 'nasa',
-    //     address: 'https://climate.nasa.gov/news/',
-    //     base: '',
-    // },
-    // {
-    //     name: 'cnn',
-    //     address: 'https://www.cnn.com/world/cnn-climate',
-    //     base: '',
-    // },
-    // {
-    //     name: 'cbsnew',
-    //     address: 'https://www.cbsnews.com/climate-change/',
-    //     base: '',
-    // },
-    // {
-    //     name: 'usatoday',
-    //     address: 'https://www.usatoday.com/climate-change/',
-    //     base: '',
-    // },
-    // {
-    //     name: 'abcnews',
-    //     address: 'https://abcnews.go.com/alerts/climate-change',
-    //     base: '',
-    // }
+    {
+        name: 'nasa',
+        address: 'https://climate.nasa.gov/news/',
+        base: '',
+    },
+    {
+        name: 'cnn',
+        address: 'https://www.cnn.com/world/cnn-climate',
+        base: '',
+    },
+    {
+        name: 'cbsnew',
+        address: 'https://www.cbsnews.com/climate-change/',
+        base: '',
+    },
+    {
+        name: 'usatoday',
+        address: 'https://www.usatoday.com/climate-change/',
+        base: '',
+    },
+    {
+        name: 'abcnews',
+        address: 'https://abcnews.go.com/alerts/climate-change',
+        base: '',
+    }
 ]
 
 const articles = []
@@ -119,11 +119,11 @@ newspapers.forEach(newspaper => {
     })
 })
 
-app.get('/', (req,res) => {
+app.get('/', (req, res) => {
     res.json('Welcome to my Climate Change News API')
 })
 
-app.get('/news', (req,res) => {
+app.get('/news', (req, res) => {
     res.json(articles)
 })
 
