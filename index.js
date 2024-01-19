@@ -82,7 +82,7 @@ const newspapers = [
         base: '',
     },
     {
-        name: 'cbsnew',
+        name: 'cbsnews',
         address: 'https://www.cbsnews.com/climate-change/',
         base: '',
     },
